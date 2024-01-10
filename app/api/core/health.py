@@ -10,4 +10,4 @@ router = APIRouter()
 @router.get('/livez')
 async def get_livez():
     """Check system component health status."""
-    return ok_response('ok', {'key': 'value'})
+    return ok_response('ok')
