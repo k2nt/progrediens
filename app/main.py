@@ -1,8 +1,8 @@
 import uvicorn
 from fastapi import FastAPI
 
-from api.router import router
-from core.config import AppConfig, EnvConfig
+from app.api.router import router
+from app.core.config import AppConfig, EnvConfig
 
 
 app_config = AppConfig()
@@ -25,7 +25,7 @@ def asgi_app_factory() -> FastAPI:
     return app
 
 
-if __name__ == '__main__':
+def start():
     # Start reverse proxy to connect localhost application to world wide web
     start_ingress()
 
@@ -34,3 +34,8 @@ if __name__ == '__main__':
         app=asgi_app_factory(),
         port=env_config.PORT
         )
+
+
+if __name__ == '__main__':
+    start()
+    

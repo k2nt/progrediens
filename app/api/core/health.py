@@ -1,7 +1,7 @@
 """The so-called 'z-pages' for system heath checks."""
 from fastapi import APIRouter
 
-from schema.base import (
+from app.schema.base import (
     ResponseBase, 
     ok_response,
     )

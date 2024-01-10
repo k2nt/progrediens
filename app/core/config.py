@@ -1,7 +1,7 @@
 import tomllib
 from pydantic_settings import BaseSettings
 
-from domain.filepath import to_pwd_path
+from app.domain.filepath import to_pwd_path
 
 
 with open(to_pwd_path('./app/appl.toml'), mode='rb') as fp:

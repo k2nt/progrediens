@@ -4,6 +4,10 @@ version = "0.1.0"
 description = ""
 authors = ["k2nt <khai.tnguyen@outlook.com>"]
 readme = "README.md"
+packages = [
+    { include = "app" },
+]
+
 
 [tool.poetry.dependencies]
 python = "^3.11"
@@ -13,6 +17,8 @@ ngrok = "^0.12.1"
 requests = "^2.31.0"
 toml = "^0.10.2"
 
+[tool.poetry.scripts]
+start-app = "app.main:start"
 
 [build-system]
 requires = ["poetry-core"]
