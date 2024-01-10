@@ -1,10 +1,7 @@
 """The so-called 'z-pages' for system heath checks."""
 from fastapi import APIRouter
 
-from app.schema.base import (
-    ResponseBase, 
-    ok_response,
-    )
+from app.schema.base import ok_response
 
 
 router = APIRouter()
@@ -12,5 +9,5 @@ router = APIRouter()
 
 @router.get('/livez')
 async def get_livez():
-    """Check if system if alive."""
-    return ok_response('ok')
+    """Check system component health status."""
+    return ok_response('ok', {'key': 'value'})
