@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "progrediens"
+version = "0.1.0"
+description = ""
+authors = ["k2nt <khai.tnguyen@outlook.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+python-dotenv = "^1.0.0"
+fastapi = {extras = ["all"], version = "^0.108.0"}
+ngrok = "^0.12.1"
+requests = "^2.31.0"
+toml = "^0.10.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
