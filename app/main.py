@@ -1,4 +1,7 @@
+import logging
+
 import uvicorn
+from ngrok import ngrok
 from fastapi import FastAPI
 
 from app.api.router import router
@@ -10,7 +13,9 @@ env_config = EnvConfig()
 
 
 def start_ingress():
-    pass
+    addr = f"{env_config.HOST}:{env_config.PORT}"
+    listener = ngrok.forward(addr, authtoken=env_config.NGROK_AUTHTOKEN)
+    print(f"Ingress established at: {listener.url()}")
 
 
 def asgi_app_factory() -> FastAPI:
@@ -26,6 +31,7 @@ def asgi_app_factory() -> FastAPI:
 
 
 def start():
+    """Launch application."""
     # Start reverse proxy to connect localhost application to world wide web
     start_ingress()
 

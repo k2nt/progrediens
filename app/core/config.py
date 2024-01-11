@@ -21,8 +21,8 @@ class AppConfig:
 
 class EnvConfig(BaseSettings):
     """Environment variable dataclass."""
+    HOST: str = env['app']['HOST']
     PORT: int = env['app']['PORT']
-    # DATABASE_URL = 
     NGROK_AUTHTOKEN: str = env['ngrok']['AUTHTOKEN']
     STRAVA_CLIENT_SECRET: str = env['strava']['CLIENT_SECRET']
     STRAVA_CLIENT_ID: str = env['strava']['CLIENT_ID']
